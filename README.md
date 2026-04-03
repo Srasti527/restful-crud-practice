@@ -16,8 +16,6 @@ This project is inspired by a mini Quora-like app where users can create, edit, 
 ---
 
 ## Project Structure
-
-
 RESTful APIs/
 ├── index.js
 ├── package.json
@@ -25,7 +23,6 @@ RESTful APIs/
 ├── .gitignore
 ├── views/
 └── public/
-
 
 - `index.js` → main server file  
 - `views/` → EJS templates  
@@ -36,27 +33,34 @@ RESTful APIs/
 
 ## How to Run
 
-1. Clone the repository:
-
 ```bash
+# Clone the repository
 git clone https://github.com/Srasti527/restful-crud-practice.git
-Navigate to the project folder:
-cd RESTful\ APIs
-Install dependencies:
+
+# Navigate to the project folder
+cd "RESTful APIs"
+
+# Install dependencies
 npm install
-Start the server:
+
+# Start the server
 node index.js
-# or use nodemon
+# or using nodemon
 npx nodemon index.js
-Open your browser at http://localhost:8080
-Tech Stack
+
+# Open in browser
+http://localhost:8080
+
+#Tech Stack
+
 Node.js
 Express.js
 EJS (Embedded JavaScript templates)
 HTML / CSS / JavaScript
-Notes
+
+#Notes
 node_modules/ is excluded via .gitignore
 This project is for practice and learning purposes
-Author
 
+#Author
 Srasti – 3rd-year student, learning Node.js and RESTful API development
