@@ -20,6 +20,18 @@ app.get("/posts",(req,res)=>{
     res.render("index.ejs",{posts});
 });
 
+app.get("/posts/new",(req,res)=>{
+    res.render("new.ejs");
+});
+
+app.post("/posts",(req,res)=>{
+    let {username , content } = req.body;
+    posts.push({Username: username ,Content: content});
+    console.log(req.body);
+    res.send("post request working");
+});
+
+
 app.listen(port,()=>{
     console.log("port running");
 })
