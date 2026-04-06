@@ -27,8 +27,9 @@ app.get("/posts/new",(req,res)=>{
 app.post("/posts",(req,res)=>{
     let {username , content } = req.body;
     posts.push({Username: username ,Content: content});
-    console.log(req.body);
-    res.send("post request working");
+    // console.log(req.body);
+    // res.send("post request working");
+    res.redirect("/posts");
 });
 
 
