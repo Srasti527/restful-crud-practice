@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const port= 8080;
+// import { v4 as uuidv4 } from 'uuid';
+const { v4: uuidv4 } = require("uuid");
+
 
 app.use(express.urlencoded({extended:true}));
 const path = require("path");
@@ -9,11 +12,11 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.static(path.join(__dirname,"public")));
 
 let posts= [
-    {id:"1a", Username: "Srasti",Content:"I don't know how, but i will"},
-    {id:"2b", Username: "Srast2j84",Content:"Consistency>Motivation"},
-    {id:"3c", Username: "TerminalThinker",Content:"No filter, no facade,just truth"},
-    {id:"4d", Username: "Miss Jain",Content:"Full-stack web developer sharpening my skills and actively practicing DSA."},
-    {id:"5e" ,Username: "Nova",Content:"Looking for internship opportunities. Open to new experiences and eager to contribute."},
+    {id:uuidv4() , Username: "Srasti",Content:"I don't know how, but i will"},
+    {id:uuidv4(), Username: "Srast2j84",Content:"Consistency>Motivation"},
+    {id:uuidv4(), Username: "TerminalThinker",Content:"No filter, no facade,just truth"},
+    {id:uuidv4(), Username: "Miss Jain",Content:"Full-stack web developer sharpening my skills and actively practicing DSA."},
+    {id:uuidv4() ,Username: "Nova",Content:"Looking for internship opportunities. Open to new experiences and eager to contribute."},
 ]
 
 app.get("/posts",(req,res)=>{
@@ -26,7 +29,8 @@ app.get("/posts/new",(req,res)=>{
 
 app.post("/posts",(req,res)=>{
     let {username , content } = req.body;
-    posts.push({Username: username ,Content: content});
+    let id = uuidv4();
+    posts.push({id, Username: username ,Content: content});
     // console.log(req.body);
     // res.send("post request working");
     res.redirect("/posts");
