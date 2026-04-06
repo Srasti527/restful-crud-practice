@@ -9,11 +9,11 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.static(path.join(__dirname,"public")));
 
 let posts= [
-    {Username: "Srasti",Content:"I don't know how, but i will"},
-    {Username: "Srast2j84",Content:"Consistency>Motivation"},
-    {Username: "TerminalThinker",Content:"No filter, no facade,just truth"},
-    {Username: "Miss Jain",Content:"Full-stack web developer sharpening my skills and actively practicing DSA."},
-    {Username: "Nova",Content:"Looking for internship opportunities. Open to new experiences and eager to contribute."},
+    {id:"1a", Username: "Srasti",Content:"I don't know how, but i will"},
+    {id:"2b", Username: "Srast2j84",Content:"Consistency>Motivation"},
+    {id:"3c", Username: "TerminalThinker",Content:"No filter, no facade,just truth"},
+    {id:"4d", Username: "Miss Jain",Content:"Full-stack web developer sharpening my skills and actively practicing DSA."},
+    {id:"5e" ,Username: "Nova",Content:"Looking for internship opportunities. Open to new experiences and eager to contribute."},
 ]
 
 app.get("/posts",(req,res)=>{
@@ -31,6 +31,15 @@ app.post("/posts",(req,res)=>{
     // res.send("post request working");
     res.redirect("/posts");
 });
+
+app.get("/posts/:id",(req,res)=>{
+    let { id} = req.params;
+    // console.log(id);
+    let post = posts.find((p) => id === p.id);
+    // console.log(post);
+    // res.send("request working");
+    res.render("show.ejs",{post});
+})
 
 
 app.listen(port,()=>{
