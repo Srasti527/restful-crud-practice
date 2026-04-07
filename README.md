@@ -66,7 +66,7 @@ Click on See in detail to view a single post.
 ---
 
 ## Project Structure
-
+```bash
 /RESTFUL-APIS
 ├─ node_modules/         # installed npm packages (ignored in git)
 ├─ public/
@@ -81,6 +81,7 @@ Click on See in detail to view a single post.
 ├─ package-lock.json     # npm dependency lock file
 ├─ package.json          # project dependencies and scripts
 └─ README.md             # project documentation
+```
 
 ## Notes
 Data is stored in-memory, so it resets when the server restarts.
