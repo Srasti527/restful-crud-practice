@@ -68,6 +68,18 @@ app.get("/posts/:id/edit",(req, res)=> {
     res.render("edit.ejs",{post});
 })
 
+// app.delete("/posts/:id", (req, res) =>{
+//     let{id} = req.params;
+//      post= posts.filter((p)=> p.id !== id);
+//      res.redirect("/posts");
+// });
+app.delete("/posts/:id", (req, res) => {
+    const { id } = req.params;
+    posts = posts.filter((p) => p.id !== id); // reassign posts array
+    res.redirect("/posts");
+});
+
+
 app.listen(port,()=>{
     console.log("port running");
 })
