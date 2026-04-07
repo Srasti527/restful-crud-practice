@@ -68,20 +68,19 @@ Click on See in detail to view a single post.
 ## Project Structure
 
 /RESTFUL-APIS
-├─ /node_modules          # installed npm packages (ignored by git)
-├─ /public
-│  └─ style.css           # CSS for styling pages
-├─ /views
-│  ├─ edit.ejs            # edit post form
-│  ├─ index.ejs           # list of all posts
-│  ├─ new.ejs             # create new post form
-│  └─ show.ejs            # view single post in detail
-├─ .gitignore             # files/folders to ignore in git (node_modules, etc.)
-├─ index.js               # main server file
-├─ package-lock.json      # auto-generated dependency lock file
-├─ package.json           # project dependencies and scripts
-└─ README.md              # project documentation
----
+├─ node_modules/         # installed npm packages (ignored in git)
+├─ public/
+│  └─ style.css          # CSS for styling
+├─ views/
+│  ├─ edit.ejs           # edit post form
+│  ├─ index.ejs          # list all posts
+│  ├─ new.ejs            # create new post form
+│  └─ show.ejs           # view single post
+├─ .gitignore            # ignores node_modules and other files
+├─ index.js              # main server file
+├─ package-lock.json     # npm dependency lock file
+├─ package.json          # project dependencies and scripts
+└─ README.md             # project documentation
 
 ## Notes
 Data is stored in-memory, so it resets when the server restarts.
